@@ -17,7 +17,7 @@ export class EducacionComponent implements OnInit {
 
     ngOnInit (){
       /* Educacion */
-      this.http.get("http://localhost:8080/Educacion/traer").subscribe(
+      this.http.get("https://serene-plains-00652.herokuapp.com/Educacion/traer").subscribe(
         (resp:any) => {
         let educ = resp;
         let eLen = educ.length;
@@ -59,7 +59,7 @@ export class EducacionComponent implements OnInit {
       };
 
       /* Experiencia */
-      this.http.get("http://localhost:8080/Experiencia/traer").subscribe(
+      this.http.get("https://serene-plains-00652.herokuapp.com/Experiencia/traer").subscribe(
         (resp:any) => {
         let exp = resp;
         let eLen = exp.length;
@@ -76,8 +76,14 @@ export class EducacionComponent implements OnInit {
             let fi = (exp[i]["fecha_inicio"])
             fn.push(fi);
 
-            let ff = (exp[i]["fecha_fin"])
-            fn.push(ff);
+            if (exp[i]["fecha_fin"] !== null){
+              let ff = (exp[i]["fecha_fin"])
+              fn.push(ff);
+            }
+            else{
+              let ff = "Actualidad"
+              fn.push(ff);
+            }
 
             fn.push(exp[i]["logo"]);
               
@@ -121,7 +127,7 @@ export class EducacionComponent implements OnInit {
         programas: prg
       };
 
-      this.http.post("http://localhost:8080/Experiencia/editar/"+String(id),exp,{responseType: "text"}).subscribe(data => {
+      this.http.post("https://serene-plains-00652.herokuapp.com/Experiencia/editar/"+String(id),exp,{responseType: "text"}).subscribe(data => {
         alert(data)
       })
     }
@@ -145,7 +151,7 @@ export class EducacionComponent implements OnInit {
         fecha_fin: ff
       };
       
-      this.http.post("http://localhost:8080/Educacion/editar/"+String(id),edc,{responseType: "text"}).subscribe(data => {
+      this.http.post("https://serene-plains-00652.herokuapp.com/Educacion/editar/"+String(id),edc,{responseType: "text"}).subscribe(data => {
         alert(data)
       })
     }
@@ -154,7 +160,7 @@ export class EducacionComponent implements OnInit {
       let id = exps[0];
       let text = "¿Estas seguro que quieres borrar esta entrada?";
         if (confirm(text) == true) {
-          this.http.delete("http://localhost:8080/Experiencia/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
+          this.http.delete("https://serene-plains-00652.herokuapp.com/Experiencia/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
           alert(data)
           })
       }
@@ -164,7 +170,7 @@ export class EducacionComponent implements OnInit {
       let id = edcs[0];
       let text = "¿Estas seguro que quieres borrar esta entrada?";
         if (confirm(text) == true) {
-          this.http.delete("http://localhost:8080/Educacion/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
+          this.http.delete("https://serene-plains-00652.herokuapp.com/Educacion/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
           alert(data)
           })
       }
