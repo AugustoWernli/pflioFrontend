@@ -196,7 +196,7 @@
     img{
       display:none;
       }
-    .description .programas{
+    .description, .programas{
       display:none;
     }
   }
