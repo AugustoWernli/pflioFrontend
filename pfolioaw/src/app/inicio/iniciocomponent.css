@@ -140,13 +140,7 @@ body,
 
 }
 
-html{
-  font-size: calc( 40px + (35 - 20) * (100vw - 400px) / (800 - 400) );
-}
-
 @media screen and (max-width: 1227px) {
-
-
 
 .introduccion h1 {
   left: -350px;
