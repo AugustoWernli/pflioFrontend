@@ -196,7 +196,10 @@
     img{
       display:none;
       }
-    .description, .programas{
+    .description{
+      display:none;
+    }
+    .programas{
       display:none;
     }
   }
