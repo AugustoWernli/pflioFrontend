@@ -1,0 +1,88 @@
+  html,
+  body,
+  h1 {
+    margin: 0;
+    padding: 0;
+    font-size:25px;
+  }
+  .fondo{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    transform:scale(1.25);
+    top:5%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 0;
+  }
+
+  .fondo a{
+    position:absolute;
+    top: 290px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: none;
+    font-size: 0.875rem;
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 68%;
+    z-index: 1001;
+  }
+
+  .custom-form {
+    position:relative;
+    min-width: 200px;
+    max-width: 40%;
+    margin:auto;
+    background: #7ac6d3;
+    padding: 2rem 3rem;
+    border-radius: 2.5rem;
+    background-color: #7ac6d3;
+    box-shadow: 8px 8px 15px #cbced1, -8px -8px 15px #ffffff;
+    color: black;
+    margin-top: 20rem;
+    z-index: 1000;
+  }
+
+  .custom-form input {
+    display: block;
+    margin: 2rem 0;
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: none;
+    box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.8), inset 5px 5px 10px
+        rgba(0, 0, 0, 0.1);
+    border: 0 none;
+    background: #ebf5fc;
+  }
+
+  .custom-form button {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: none;
+    font-size: 0.875rem;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #171817;
+    margin-left: 25%;
+    width: 50%;
+    display: block;
+    padding: 0.875rem 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 1px 1px 5px #b1b1b1, -1px -1px 5px #ffffff;
+    cursor: pointer;
+  }
+
+    .custom-form button:hover{
+    color: #000;
+    background-color: #ffffff;
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  }
+
+  .login svg{
+    position: absolute;
+    margin-left: calc(70% - 15px);
+    margin-top: -5px;
+  }

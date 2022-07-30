@@ -1,0 +1,12 @@
+<div>
+<h2> Contactame! </h2>
+  <form class="contacto" #submitero="ngForm" (ngSubmit)="enviar_form(submitero)">
+  <label for="name">Nombre</label>
+      <input type="text" id="name" name="nombre" placeholder="Tu nombre">
+      <label for="emp">Empresa</label>
+      <input type="text" id="emp" name="empresa" placeholder="Nombre de tu empresa (opcional)">
+      <label for="subject">Mensaje</label>
+      <textarea id="subject" name="mensaje" placeholder="Escribe aqui.." style="height:170px"></textarea>
+      <input type="submit" value="Submit">
+    </form>
+  </div>

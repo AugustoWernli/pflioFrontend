@@ -1,0 +1,121 @@
+<h1 class="skills">Skills</h1>
+    <p>Aqui encontraras mis distintas habilidades profesionales, y al area que corresponden respectivamente.</p>
+    <input type="checkbox" id="create_skill">
+    <label for="create_skill" class="skl_crt_check_label">
+    <span><svg class="create_skll" *ngIf="logIn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 72 72"><path d="M36,12c13.255,0,24,10.745,24,24c0,13.255-10.745,24-24,24S12,49.255,12,36C12,22.745,22.745,12,36,12z M44,39	c1.657,0,3-1.343,3-3c0-1.657-1.343-3-3-3c-0.329,0-2.426,0-5,0c0-2.574,0-4.672,0-5c0-1.657-1.343-3-3-3c-1.657,0-3,1.343-3,3	c0,0.328,0,2.426,0,5c-2.574,0-4.671,0-5,0c-1.657,0-3,1.343-3,3c0,1.657,1.343,3,3,3c0.329,0,2.426,0,5,0c0,2.574,0,4.672,0,5	c0,1.657,1.343,3,3,3c1.657,0,3-1.343,3-3c0-0.328,0-2.426,0-5C41.574,39,43.671,39,44,39z"/></svg>
+    </span>
+    </label>
+    <form class="crearform_skil" id="createform_skl" #submiterskl="ngForm" (ngSubmit)="create_skl(submiterskl)">
+        <label for="tit">Titulo</label>
+        <input type="text" id="tit" name="titulo_rep" ngModel="">
+        <label for="skil">Skill</label>
+        <input type="text" id="skil" name="skill" ngModel="">
+        <label for="dmn">Dominio</label>
+        <input type="number" id="dmn" name="dominio" ngModel=0>
+     <button type="submit">Enviar!</button>
+    </form>
+    <div>
+        <ul>
+            <li class="elements-skills" *ngFor="let skl of skills">
+                <div class="skl_check_label" (click) = "ocult_skl(skl)">
+                <span><svg class="modif" *ngIf="logIn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg>
+                </span>
+                </div>
+                <div class="skl_elm_check_label" (click) = "borrar_skl(skl)">
+                <span>
+                    <svg class="elim" *ngIf="logIn" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 300.003 300.003" style="enable-background:new 0 0 300.003 300.003;" xml:space="preserve">
+                    <g><g><path d="M150,0C67.159,0,0.001,67.159,0.001,150c0,82.838,67.157,150.003,149.997,150.003S300.002,232.838,300.002,150 C300.002,67.159,232.839,0,150,0z M206.584,207.171c-5.989,5.984-15.691,5.984-21.675,0l-34.132-34.132l-35.686,35.686 c-5.986,5.984-15.689,5.984-21.672,0c-5.989-5.991-5.989-15.691,0-21.68l35.683-35.683L95.878,118.14 c-5.984-5.991-5.984-15.691,0-21.678c5.986-5.986,15.691-5.986,21.678,0l33.222,33.222l31.671-31.673 c5.986-5.984,15.694-5.986,21.675,0c5.989,5.991,5.989,15.697,0,21.678l-31.668,31.671l34.13,34.132 C212.57,191.475,212.573,201.183,206.584,207.171z"/></g></g>
+                    </svg>
+                </span>
+                </div>
+                <span class="info_skl" [ngClass]="{'ocultar_skl':skl[4]}">
+                    <h4>{{skl[1]}}</h4>
+                    <h3 class="skill">{{skl[2]}}</h3>
+                    <h3 class="dom">{{skl[3]}}%</h3>
+                </span>
+                <form class="editarform" id="editform_skl" #submitero="ngForm" (ngSubmit)="modif_skl(submitero)" *ngIf="skl[4]">
+                    <input type="number" [hidden]=true name="id" ngModel={{skl[0]}}>
+                    <label for="tit">Titulo</label>
+                    <input type="text" id="tit" name="titulo_rep" ngModel={{skl[1]}}>
+                    <label for="skil">Skill</label>
+                    <input type="text" id="skil" name="skill" ngModel={{skl[2]}}>
+                    <label for="dmn">Dominio</label>
+                    <input type="number" id="dmn" name="dominio" ngModel={{skl[3]}}>
+                 <button type="submit">Enviar!</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+<h1 class="proyectos">Proyectos</h1>
+<p>Aqui encontraras mis distintos proyectos que realice de forma profesional</p>
+<input type="checkbox" id="create_proy">
+<label for="create_proy" class="proy_crt_check_label">
+<span><svg class="create_pry" *ngIf="logIn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 72 72"><path d="M36,12c13.255,0,24,10.745,24,24c0,13.255-10.745,24-24,24S12,49.255,12,36C12,22.745,22.745,12,36,12z M44,39	c1.657,0,3-1.343,3-3c0-1.657-1.343-3-3-3c-0.329,0-2.426,0-5,0c0-2.574,0-4.672,0-5c0-1.657-1.343-3-3-3c-1.657,0-3,1.343-3,3	c0,0.328,0,2.426,0,5c-2.574,0-4.671,0-5,0c-1.657,0-3,1.343-3,3c0,1.657,1.343,3,3,3c0.329,0,2.426,0,5,0c0,2.574,0,4.672,0,5	c0,1.657,1.343,3,3,3c1.657,0,3-1.343,3-3c0-0.328,0-2.426,0-5C41.574,39,43.671,39,44,39z"/></svg>
+</span>
+</label>
+<form class="crearform_proy" id="createform_proy" #submiterpry="ngForm" (ngSubmit)="create_proy(submiterpry)">
+    <label for="tit">Titulo</label>
+    <input type="text" id="tit" name="titulo" ngModel="">
+    <label for="nomb">Nombre</label>
+    <input type="text" id="nomb" name="nombre" ngModel="">
+    <label for="d_inicio">Fecha</label>
+    <input type="date" id="d_inicio" name="fecha" ngModel="1/1/2020">
+    <div class="form_create_proy">
+    <label for="desc">Descripción</label>
+    <textarea type="text" id="desc" name="descripcion" ngModel=""></textarea>
+    </div>
+    <label for="fot">Logo (URL)</label>
+    <input type="text" id="fot" name="foto" ngModel="">
+    <label for="lug">Lugar</label>
+    <input type="text" id="lug" name="lugar" ngModel="">
+  <button type="submit">Enviar!</button>
+</form>
+<div>
+    <ul>
+      <li class="elements-proyectos" *ngFor="let proy of proyectos">
+        <div class="proy_check_label" (click) = "ocult_proy(proy)">
+          <span><svg class="modif" *ngIf="logIn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg>
+          </span>
+        </div>
+        <div class="elm_check_label" (click) = "borrar_proy(proy)">
+          <span>
+            <svg class="elim" *ngIf="logIn" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 300.003 300.003" style="enable-background:new 0 0 300.003 300.003;" xml:space="preserve">
+            <g><g><path d="M150,0C67.159,0,0.001,67.159,0.001,150c0,82.838,67.157,150.003,149.997,150.003S300.002,232.838,300.002,150 C300.002,67.159,232.839,0,150,0z M206.584,207.171c-5.989,5.984-15.691,5.984-21.675,0l-34.132-34.132l-35.686,35.686 c-5.986,5.984-15.689,5.984-21.672,0c-5.989-5.991-5.989-15.691,0-21.68l35.683-35.683L95.878,118.14 c-5.984-5.991-5.984-15.691,0-21.678c5.986-5.986,15.691-5.986,21.678,0l33.222,33.222l31.671-31.673 c5.986-5.984,15.694-5.986,21.675,0c5.989,5.991,5.989,15.697,0,21.678l-31.668,31.671l34.13,34.132 C212.57,191.475,212.573,201.183,206.584,207.171z"/></g></g>
+            </svg>
+          </span>
+        </div>
+        <span class="info_proy" [ngClass]="{'ocultar':proy[7]}">
+          <h3>Titulo: {{proy[1]}}</h3>
+          <h3>Lugar: {{proy[2]}}</h3>
+          <h3>Fecha: {{proy[3]}}</h3>
+          <h3>Nombre: {{proy[4]}}</h3>
+          <h4 class="description">Descripción: {{proy[6]}}</h4>
+          <img src={{proy[5]}} *ngIf="proy[5]!=null" height="200px">
+        </span>
+        <form class="editarform" id="editform_proy" #submitero="ngForm" (ngSubmit)="modif_proy(submitero)" *ngIf="proy[7]">
+          <input type="number" [hidden]=true name="id" ngModel={{proy[0]}}>
+          <label for="tit">Titulo</label>
+          <input type="text" id="tit" name="titulo" ngModel={{proy[1]}}>
+          <label for="lug">Lugar</label>
+          <input type="text" id="lug" name="lugar" ngModel={{proy[2]}}>
+          
+          <label for="d_inicio">Fecha Inicio</label>
+          <input type="date" id="d_inicio" name="fecha" ngModel={{proy[3]}}>
+          
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="nombre" ngModel={{proy[4]}}>
+
+          <label for="fot">Logo (URL)</label>
+          <input type="text" id="fot" name="foto" ngModel={{proy[5]}}>
+          <div class="form_proy">
+          <label for="desc">Descripción</label>
+          <textarea type="text" id="desc" name="descripcion" ngModel={{proy[6]}}></textarea>
+          </div>
+          <button type="submit">Enviar!</button>
+        </form>
+      </li>
+    </ul>
+</div>
+<form>

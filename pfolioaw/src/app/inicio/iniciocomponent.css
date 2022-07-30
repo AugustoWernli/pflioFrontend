@@ -1,0 +1,157 @@
+html,
+body,
+
+.introduccion{
+    z-index: 1;
+    height: 600px;
+    display: grid;
+    background-color: #000;
+    padding: 500px;
+    padding-bottom: 0;
+    color: #ffffffff;
+    
+  transform: scale(1.01);
+    
+    background-image: url("../../assets/bridge.jpg");
+    background-blend-mode: lighten;
+}
+
+.introduccion h1{
+  position: relative;
+  top: -50px;
+  left: -350px;
+  margin: 0;
+  padding: 0;
+  text-shadow: 4px 3px black;
+  font-size: 50px;
+}
+
+.introduccion h2 {
+  position: relative;
+  top: -460px;
+  left: 60%;
+  padding: 100px;
+  margin-right: 0;
+  width: 60%;
+  font-size: 30px;
+  text-shadow: 3px 2px black;
+  TEXT-ALIGN: CENTER;
+  background-size: cover;
+}
+
+.introduccion h3{
+  top: -50px;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  left: -300px;
+  font-size: 30px;
+  position: relative;
+}
+
+.introduccion .dinamico{
+  position:relative;
+  top: -100px;
+  left:-230px;
+  height:40px;
+  width:425px;
+  margin-left:30px;
+  padding-left:0;
+  
+  overflow: hidden;
+}
+
+.introduccion .dinamico li{
+  position:relative;
+  display:inline-block;
+  padding:30px;
+  top: -120px;
+  width: 100%;
+  font-size: 30px;
+  list-style: none;
+  color:#FC6D6D;
+  text-shadow: 3px 2px black;
+  
+  animation: slide 7.5s steps(5) infinite;
+}
+
+
+.dinamico span{
+  position:relative;
+  top:94px;
+}
+
+.introduccion .dinamico li ::after{
+  content: "";
+  position: absolute;
+  left:0;
+  height:100%;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  border-left: 2px solid #FC6D6D;
+  z-index: 500;
+  animation: typing 1.5s steps(15) infinite;
+}
+
+@keyframes typing{
+  40%, 60%{
+    left: calc(100%);
+    width: 0%;
+  }
+  100%{
+    left:0
+  }
+}
+
+@keyframes slide{
+  100%{
+    top: -590px;
+  }
+}
+
+.footer{
+  position: absolute;
+  display: grid;
+  background-color: #9ce5f1;
+  transform: scale(1.01);
+  z-index: 1002;
+  height: 100px;
+  width: 100%;
+}
+
+.footer h2{
+  position: relative;
+  font-size:25px;
+  top:-60px;
+  left:80px
+}
+
+@media screen and (max-width:1628px){
+  .dinamico{
+    top:604px;
+  }
+}
+
+@media screen and (max-width:1445px){
+  
+.introduccion .dinamico{
+  width: 100%;
+}
+
+}
+
+@media screen and (max-width: 1227px) {
+.introduccion h1 {
+  left: -350px;
+}
+
+.introduccion h3{
+  left: -300px;
+}
+
+.introduccion h2 {
+  top: -450px;
+  left: 200px;
+  width: 80%;
+}
+}

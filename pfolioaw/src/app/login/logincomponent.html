@@ -1,0 +1,46 @@
+
+<article class="login">
+    <form class="custom-form" method="post">
+      <h1>Login</h1>
+      <input
+        type="email"
+        [(ngModel)]="user"
+        name="email"
+        placeholder="User"
+        required="required"
+      />
+      <input
+        type="password"
+        [(ngModel)]="pass"
+        name="password"
+        placeholder="Password"
+        required="required"
+      />
+      <svg width="50" height="50" aria-hidden="true" role="img" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M512 176a176 176 0 01-209 173l-24 27a24 24 0 01-18 8h-37v40c0 13-11 24-24 24h-40v40c0 13-11 24-24 24H24c-13 0-24-11-24-24v-78c0-6 3-13 7-17l162-162a176 176 0 11343-55zm-176-48a48 48 0 1096 0 48 48 0 00-96 0z"></path></svg>
+      <button type="button" (click)="login()" routerLink="">Log in</button>
+    </form>
+  </article>
+<div class="fondo">
+    <a routerLink="">x</a>
+</div>
+  <!----
+  <div class="popup">
+  <input class="login" id="lg" type="checkbox">
+  <div class="popuplogin" id="popup">
+    <div class="popup-content">
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+      <a href="#" onclick="authService.login(Username, Password)" class="button">Login</a>
+    </div>
+  </div>
+  <label for="lg" class="lgbutton-label">
+    <span id="spnlgin">Login</span>
+    <span id="spnx">x</span>
+  </label>
+</div>
+  
+
+constructor(private AuthService: AuthService) {}
+
+this.AuthService.login(this.username, this.password)
+-->

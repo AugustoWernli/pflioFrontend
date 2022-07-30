@@ -1,0 +1,155 @@
+
+  <h1 class="experiencia">Experiencia</h1>
+    <p>Aqui encontraras mis distintas experiencias profesionales, y los skills desarrolladas en ellos.</p>
+    <div>
+        <ul>
+          <li class="elements-experiencia" *ngFor="let exp of experiencia">
+            <div class="exp_check_label" (click) = "ocult_exp(exp)">
+              <span><svg class="modif" *ngIf="logIn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg>
+              </span>
+            </div>
+            <div class="elm_check_label" (click) = "borrar_exp(exp)">
+              <span>
+                <svg class="elim" *ngIf="logIn" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 300.003 300.003" style="enable-background:new 0 0 300.003 300.003;" xml:space="preserve">
+                <g><g><path d="M150,0C67.159,0,0.001,67.159,0.001,150c0,82.838,67.157,150.003,149.997,150.003S300.002,232.838,300.002,150 C300.002,67.159,232.839,0,150,0z M206.584,207.171c-5.989,5.984-15.691,5.984-21.675,0l-34.132-34.132l-35.686,35.686 c-5.986,5.984-15.689,5.984-21.672,0c-5.989-5.991-5.989-15.691,0-21.68l35.683-35.683L95.878,118.14 c-5.984-5.991-5.984-15.691,0-21.678c5.986-5.986,15.691-5.986,21.678,0l33.222,33.222l31.671-31.673 c5.986-5.984,15.694-5.986,21.675,0c5.989,5.991,5.989,15.697,0,21.678l-31.668,31.671l34.13,34.132 C212.57,191.475,212.573,201.183,206.584,207.171z"/></g></g>
+                </svg>
+              </span>
+            </div>
+            <span class="info_expe" [ngClass]="{'ocultar':exp[8]}">
+              <h3>Titulo: {{exp[1]}}</h3>
+              <h3>Lugar: {{exp[2]}}</h3>
+              <h3>Fecha de inicio: {{exp[3]}}</h3>
+              <h3>Fecha de finalización: {{exp[4]}}</h3>
+              <h4 class="description">Descripción: {{exp[6]}}</h4>
+              <h4 class="programas">Programas: {{exp[7]}}</h4>
+              <img src={{exp[5]}} *ngIf="exp[5]!=null" height="200px">
+            </span>
+            <form class="editarform" id="editform_exp" #submitero="ngForm" (ngSubmit)="modif_exp(submitero)" *ngIf="exp[8]">
+              <input type="number" [hidden]=true name="id" ngModel={{exp[0]}}>
+              <label for="tit">Titulo</label>
+              <input type="text" id="tit" name="titulo" ngModel={{exp[1]}}>
+              <label for="lug">Lugar</label>
+              <input type="text" id="lug" name="empresa" ngModel={{exp[2]}}>
+              
+              <label for="d_inicio">Fecha Inicio</label>
+              <input type="date" id="d_inicio" name="fechainicio" ngModel={{exp[3]}}>
+              
+              <label for="d_fin">Fecha Finalización</label>
+              <input type="date" id="d_fin" name="fechafin" ngModel={{exp[4]}}>
+  
+              <label for="log">Logo (URL)</label>
+              <input type="text" id="log" name="logo" ngModel={{exp[5]}}>
+              <div class="form_exp">
+              <label for="desc">Descripción</label>
+              <textarea type="text" id="desc" name="descripcion" ngModel={{exp[6]}}></textarea>
+              <label for="desc">Programas</label>
+              <textarea type="text" id="desc" name="programas" ngModel={{exp[7]}}></textarea>
+              </div>
+              <button type="submit">Enviar!</button>
+            </form>
+          </li>
+        </ul>
+    </div>
+    <form>
+ 
+  <h1 class="educacion">Educación</h1>
+  <p>Aqui encontraras los distintos titulos que poseo, ademas de cursos que fui realizando</p>
+  <div>
+    <h2>Titulos</h2>
+      <ul>
+        <li class="elements-educacion" *ngFor="let edc of educacion">
+          <div class="edc_check_label" (click) = "ocult_edc(edc)">
+            <span><svg class="modif" *ngIf="logIn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg>
+            </span>
+          </div>
+          <div class="elm_check_label" (click) = "borrar_edc(edc)">
+            <span>
+              <svg class="elim" *ngIf="logIn" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 300.003 300.003" style="enable-background:new 0 0 300.003 300.003;" xml:space="preserve">
+              <g><g><path d="M150,0C67.159,0,0.001,67.159,0.001,150c0,82.838,67.157,150.003,149.997,150.003S300.002,232.838,300.002,150 C300.002,67.159,232.839,0,150,0z M206.584,207.171c-5.989,5.984-15.691,5.984-21.675,0l-34.132-34.132l-35.686,35.686 c-5.986,5.984-15.689,5.984-21.672,0c-5.989-5.991-5.989-15.691,0-21.68l35.683-35.683L95.878,118.14 c-5.984-5.991-5.984-15.691,0-21.678c5.986-5.986,15.691-5.986,21.678,0l33.222,33.222l31.671-31.673 c5.986-5.984,15.694-5.986,21.675,0c5.989,5.991,5.989,15.697,0,21.678l-31.668,31.671l34.13,34.132 C212.57,191.475,212.573,201.183,206.584,207.171z"/></g></g>
+              </svg>
+            </span>
+          </div>
+          <span class="info_titulos" [ngClass]="{'ocultar':edc[7]}">
+            <h3>Titulo: {{edc[1]}}</h3>
+            <h3>Lugar: {{edc[2]}}</h3>
+            <h3>Fecha de inicio: {{edc[3]}}</h3>
+            <h3>Fecha de finalización: {{edc[4]}}</h3>
+            <img src={{edc[5]}} *ngIf="edc[5]!=null" height="200px">
+          </span>
+          <form class="editarform" id="editform_edc" #submitero="ngForm" (ngSubmit)="modif_edc(submitero)" *ngIf="edc[7]">
+            <label for="tip">Tipo</label>
+            <select id="tip" name="tipo" ngModel={{edc[6]}}>
+              <option value="titulo">Titulo</option>
+              <option value="certificado">Certificado</option>
+            </select>
+            <input type="number" [hidden]=true name="id" ngModel={{edc[0]}}>
+            <label for="tit">Titulo</label>
+            <input type="text" id="tit" name="titulo" ngModel={{edc[1]}}>
+            <label for="lug">Lugar</label>
+            <input type="text" id="lug" name="lugar" ngModel={{edc[2]}}>
+            
+            <label for="d_inicio">Fecha Inicio</label>
+            <input type="date" id="d_inicio" name="fechainicio" ngModel={{edc[3]}}>
+            
+            <label for="d_fin">Fecha Finalización</label>
+            <input type="date" id="d_fin" name="fechafin" ngModel={{edc[4]}}>
+
+            <label for="log">Logo (URL)</label>
+            <input type="text" id="log" name="logo" ngModel={{edc[5]}}>
+
+            <button type="submit">Enviar!</button>
+          </form>
+        </li>
+      </ul>
+  </div>
+  <div>
+    <h2>Certificaciones</h2>
+      <ul>
+        <li class="elements-educacion" *ngFor="let cert of certificados">
+          <div class="cert_check_label" (click) = "ocult_edc(cert)">
+            <span><svg class="modif" *ngIf="logIn" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg>
+            </span>
+          </div>
+          <div class="elm_check_label" (click) = "borrar_edc(cert)">
+            <span>
+              <svg class="elim" *ngIf="logIn" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              viewBox="0 0 300.003 300.003" style="enable-background:new 0 0 300.003 300.003;" xml:space="preserve">
+              <g><g><path d="M150,0C67.159,0,0.001,67.159,0.001,150c0,82.838,67.157,150.003,149.997,150.003S300.002,232.838,300.002,150 C300.002,67.159,232.839,0,150,0z M206.584,207.171c-5.989,5.984-15.691,5.984-21.675,0l-34.132-34.132l-35.686,35.686 c-5.986,5.984-15.689,5.984-21.672,0c-5.989-5.991-5.989-15.691,0-21.68l35.683-35.683L95.878,118.14 c-5.984-5.991-5.984-15.691,0-21.678c5.986-5.986,15.691-5.986,21.678,0l33.222,33.222l31.671-31.673 c5.986-5.984,15.694-5.986,21.675,0c5.989,5.991,5.989,15.697,0,21.678l-31.668,31.671l34.13,34.132 C212.57,191.475,212.573,201.183,206.584,207.171z"/></g></g>
+              </svg>
+            </span>
+          </div>
+          <span class="info_titulos" [ngClass]="{'ocultar':cert[7]}">
+            <h3>Nombre: {{cert[1]}}</h3>
+            <h3>Lugar: {{cert[2]}}</h3>
+            <h3>Fecha de inicio: {{cert[3]}}</h3>
+            <h3>Fecha de finalización: {{cert[4]}}</h3>
+            <img src={{cert[5]}} *ngIf="cert[5]!=null" height="200px">
+          </span>
+          <form class="editarform" id="editform_edc" #submitero="ngForm" (ngSubmit)="modif_edc(submitero)" *ngIf="cert[7]">
+            <label for="tip">Tipo</label>
+            <select id="tip" name="tipo" ngModel={{cert[6]}}>
+              <option value="titulo">Titulo</option>
+              <option value="certificado">Certificado</option>
+            </select>
+            <input type="number" [hidden]=true name="id" ngModel={{cert[0]}}>
+            <label for="tit">Nombre</label>
+            <input type="text" id="tit" name="titulo" ngModel={{cert[1]}}>
+            <label for="lug">Lugar</label>
+            <input type="text" id="lug" name="lugar" ngModel={{cert[2]}}>
+            
+            <label for="d_inicio">Fecha Inicio</label>
+            <input type="date" id="d_inicio" name="fecha_inicio" ngModel={{cert[3]}}>
+            
+            <label for="d_fin">Fecha Finalización</label>
+            <input type="date" id="d_fin" name="fecha_fin" ngModel={{cert[4]}}>
+
+            <label for="log">Logo(URL)</label>
+            <input type="text" id="log" name="logo" ngModel={{cert[5]}}>
+
+            <button type="submit">Enviar!</button>
+          </form>
+        </li>
+      </ul>
+  </div>
