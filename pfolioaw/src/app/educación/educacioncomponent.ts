@@ -76,8 +76,8 @@ export class EducacionComponent implements OnInit {
             let fi = (exp[i]["fecha_inicio"])
             fn.push(fi);
 
-            console.log(exp[i]["fecha_fin"])
             if (exp[i]["fecha_fin"] !== "null"){
+              console.log("xd")
               let ff = (exp[i]["fecha_fin"])
               fn.push(ff);
             }
