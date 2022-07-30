@@ -196,6 +196,10 @@
     img{
       display:none;
       }
+
+    html{
+      font-size: calc( 40px + (35 - 20) * (100vw - 400px) / (800 - 400) );
+    }
     .description{
       display:none;
     }

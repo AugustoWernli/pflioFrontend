@@ -201,7 +201,9 @@
     .nav-toggle-label{
       display: flex;
     }
-
+    html{
+      font-size: calc( 40px + (35 - 20) * (100vw - 400px) / (800 - 400) );
+    }
     .navigation {
       all: unset;
       position: absolute;

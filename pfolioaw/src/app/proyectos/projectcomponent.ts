@@ -17,7 +17,7 @@ export class ProyectosComponent implements OnInit {
 
     ngOnInit (){
       /* Proyectos */
-      this.http.get("http://localhost:8080/Proyectos/traer").subscribe(
+      this.http.get("https://serene-plains-00652.herokuapp.com/Proyectos/traer").subscribe(
         (resp:any) => {
         let proy = resp;
         let eLen = proy.length;
@@ -52,7 +52,7 @@ export class ProyectosComponent implements OnInit {
       };
     
      /* Skills */
-     this.http.get("http://localhost:8080/Skills/traer").subscribe(
+     this.http.get("https://serene-plains-00652.herokuapp.com/Skills/traer").subscribe(
         (resp:any) => {
         let skl = resp;
         let eLen = skl.length;
@@ -108,7 +108,7 @@ export class ProyectosComponent implements OnInit {
             skill: skill,
             dominio: dom
             };
-        this.http.post("http://localhost:8080/Skills/crear",skil,{responseType: "text"}).subscribe(data => {
+        this.http.post("https://serene-plains-00652.herokuapp.com/Skills/crear",skil,{responseType: "text"}).subscribe(data => {
             alert(data)
             })
     }
@@ -131,7 +131,7 @@ export class ProyectosComponent implements OnInit {
         };
 
         console.log(proy)
-        this.http.post("http://localhost:8080/Proyectos/crear",proy,{responseType: "text"}).subscribe(data => {
+        this.http.post("https://serene-plains-00652.herokuapp.com/Proyectos/crear",proy,{responseType: "text"}).subscribe(data => {
             alert(data)
             })
     }
@@ -154,7 +154,7 @@ export class ProyectosComponent implements OnInit {
         lugar:lg
         };
 
-    this.http.post("http://localhost:8080/Proyectos/editar/"+String(id),proy,{responseType: "text"}).subscribe(data => {
+    this.http.post("https://serene-plains-00652.herokuapp.com/Proyectos/editar/"+String(id),proy,{responseType: "text"}).subscribe(data => {
         alert(data)
         })
     }
@@ -172,7 +172,7 @@ export class ProyectosComponent implements OnInit {
         dominio: dom,
         };
 
-    this.http.post("http://localhost:8080/Skills/editar/"+String(id),skil,{responseType: "text"}).subscribe(data => {
+    this.http.post("https://serene-plains-00652.herokuapp.com/Skills/editar/"+String(id),skil,{responseType: "text"}).subscribe(data => {
         alert(data)
         })
     }
@@ -181,7 +181,7 @@ export class ProyectosComponent implements OnInit {
     let id = proys[0];
     let text = "¿Estas seguro que quieres borrar esta entrada?";
         if (confirm(text) == true) {
-        this.http.delete("http://localhost:8080/Proyectos/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
+        this.http.delete("https://serene-plains-00652.herokuapp.com/Proyectos/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
         alert(data)
         })
     }
@@ -195,7 +195,7 @@ export class ProyectosComponent implements OnInit {
     let id = skills[0];
     let text = "¿Estas seguro que quieres borrar esta entrada?";
         if (confirm(text) == true) {
-        this.http.delete("http://localhost:8080/Skills/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
+        this.http.delete("https://serene-plains-00652.herokuapp.com/Skills/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
         alert(data)
         })
         }
