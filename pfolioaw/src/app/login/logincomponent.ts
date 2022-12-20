@@ -1,4 +1,4 @@
-import {Component,OnInit} from "@angular/core";
+import {Component,Inject,OnInit} from "@angular/core";
 import{Router} from "@angular/router";
 import {AuthService} from './app-authservice';
 import {FormsModule} from '@angular/forms';
@@ -9,6 +9,7 @@ import { UsersService } from "./auth.guard";
     templateUrl: 'logincomponent.html',
     styleUrls: ["./logincomponent.css"]
 })
+@Inject
 export class LoginComponent {
     user: "";
     pass: "";

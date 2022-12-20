@@ -17,7 +17,7 @@ export class EducacionComponent implements OnInit {
 
     ngOnInit (){
       /* Educacion */
-      this.http.get("pfolioback-augustowernli05.koyeb.app/Educacion/traer").subscribe(
+      this.http.get("https://pfolioback-augustowernli05.koyeb.app/Educacion/traer").subscribe(
         (resp:any) => {
         let educ = resp;
         let eLen = educ.length;
@@ -59,7 +59,7 @@ export class EducacionComponent implements OnInit {
       };
 
       /* Experiencia */
-      this.http.get("pfolioback-augustowernli05.koyeb.app/Experiencia/traer").subscribe(
+      this.http.get("https://pfolioback-augustowernli05.koyeb.app/Experiencia/traer").subscribe(
         (resp:any) => {
         let exp = resp;
         let eLen = exp.length;
@@ -121,7 +121,7 @@ export class EducacionComponent implements OnInit {
         programas: prg
       };
 
-      this.http.post("pfolioback-augustowernli05.koyeb.app/Experiencia/editar/"+String(id),exp,{responseType: "text"}).subscribe(data => {
+      this.http.post("https://pfolioback-augustowernli05.koyeb.app/Experiencia/editar/"+String(id),exp,{responseType: "text"}).subscribe(data => {
         alert(data)
       })
     }
@@ -145,7 +145,7 @@ export class EducacionComponent implements OnInit {
         fecha_fin: ff
       };
       
-      this.http.post("pfolioback-augustowernli05.koyeb.app/Educacion/editar/"+String(id),edc,{responseType: "text"}).subscribe(data => {
+      this.http.post("https://pfolioback-augustowernli05.koyeb.app/Educacion/editar/"+String(id),edc,{responseType: "text"}).subscribe(data => {
         alert(data)
       })
     }
@@ -154,7 +154,7 @@ export class EducacionComponent implements OnInit {
       let id = exps[0];
       let text = "¿Estas seguro que quieres borrar esta entrada?";
         if (confirm(text) == true) {
-          this.http.delete("pfolioback-augustowernli05.koyeb.app/Experiencia/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
+          this.http.delete("https://pfolioback-augustowernli05.koyeb.app/Experiencia/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
           alert(data)
           })
       }
@@ -164,7 +164,7 @@ export class EducacionComponent implements OnInit {
       let id = edcs[0];
       let text = "¿Estas seguro que quieres borrar esta entrada?";
         if (confirm(text) == true) {
-          this.http.delete("pfolioback-augustowernli05.koyeb.app/Educacion/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
+          this.http.delete("https://pfolioback-augustowernli05.koyeb.app/Educacion/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
           alert(data)
           })
       }

@@ -17,7 +17,7 @@ export class ProyectosComponent implements OnInit {
 
     ngOnInit (){
       /* Proyectos */
-      this.http.get("pfolioback-augustowernli05.koyeb.app/Proyectos/traer").subscribe(
+      this.http.get("https://pfolioback-augustowernli05.koyeb.app/Proyectos/traer").subscribe(
         (resp:any) => {
         let proy = resp;
         let eLen = proy.length;
@@ -52,7 +52,7 @@ export class ProyectosComponent implements OnInit {
       };
     
      /* Skills */
-     this.http.get("pfolioback-augustowernli05.koyeb.app/Skills/traer").subscribe(
+     this.http.get("https://pfolioback-augustowernli05.koyeb.app/Skills/traer").subscribe(
         (resp:any) => {
         let skl = resp;
         let eLen = skl.length;
@@ -108,7 +108,7 @@ export class ProyectosComponent implements OnInit {
             skill: skill,
             dominio: dom
             };
-        this.http.post("pfolioback-augustowernli05.koyeb.app/Skills/crear",skil,{responseType: "text"}).subscribe(data => {
+        this.http.post("https://pfolioback-augustowernli05.koyeb.app/Skills/crear",skil,{responseType: "text"}).subscribe(data => {
             alert(data)
             })
     }
@@ -131,7 +131,7 @@ export class ProyectosComponent implements OnInit {
         };
 
         console.log(proy)
-        this.http.post("pfolioback-augustowernli05.koyeb.app/Proyectos/crear",proy,{responseType: "text"}).subscribe(data => {
+        this.http.post("https://pfolioback-augustowernli05.koyeb.app/Proyectos/crear",proy,{responseType: "text"}).subscribe(data => {
             alert(data)
             })
     }
@@ -154,7 +154,7 @@ export class ProyectosComponent implements OnInit {
         lugar:lg
         };
 
-    this.http.post("pfolioback-augustowernli05.koyeb.app/Proyectos/editar/"+String(id),proy,{responseType: "text"}).subscribe(data => {
+    this.http.post("https://pfolioback-augustowernli05.koyeb.app/Proyectos/editar/"+String(id),proy,{responseType: "text"}).subscribe(data => {
         alert(data)
         })
     }
@@ -172,7 +172,7 @@ export class ProyectosComponent implements OnInit {
         dominio: dom,
         };
 
-    this.http.post("pfolioback-augustowernli05.koyeb.app/Skills/editar/"+String(id),skil,{responseType: "text"}).subscribe(data => {
+    this.http.post("https://pfolioback-augustowernli05.koyeb.app/Skills/editar/"+String(id),skil,{responseType: "text"}).subscribe(data => {
         alert(data)
         })
     }
@@ -181,7 +181,7 @@ export class ProyectosComponent implements OnInit {
     let id = proys[0];
     let text = "¿Estas seguro que quieres borrar esta entrada?";
         if (confirm(text) == true) {
-        this.http.delete("pfolioback-augustowernli05.koyeb.app/Proyectos/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
+        this.http.delete("https://pfolioback-augustowernli05.koyeb.app/Proyectos/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
         alert(data)
         })
     }
@@ -195,7 +195,7 @@ export class ProyectosComponent implements OnInit {
     let id = skills[0];
     let text = "¿Estas seguro que quieres borrar esta entrada?";
         if (confirm(text) == true) {
-        this.http.delete("pfolioback-augustowernli05.koyeb.app/Skills/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
+        this.http.delete("https://pfolioback-augustowernli05.koyeb.app/Skills/borrar/"+String(id),{responseType: "text"}).subscribe(data => {
         alert(data)
         })
         }
